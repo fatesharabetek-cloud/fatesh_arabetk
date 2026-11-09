@@ -1,0 +1,97 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/buy-salvage-cars",
+      "destination": "/buy-salvage-cars.html"
+    },
+    {
+      "source": "/guides",
+      "destination": "/guides.html"
+    },
+    {
+      "source": "/guides/before-buying-salvage-car",
+      "destination": "/guides/before-buying-salvage-car.html"
+    },
+    {
+      "source": "/guides/how-to-check-chassis-number",
+      "destination": "/guides/how-to-check-chassis-number.html"
+    },
+    {
+      "source": "/hyundai-salvage-cars",
+      "destination": "/hyundai-salvage-cars.html"
+    },
+    {
+      "source": "/lost-cars-sudan",
+      "destination": "/lost-cars-sudan.html"
+    },
+    {
+      "source": "/report-lost-car",
+      "destination": "/report-lost-car.html"
+    },
+    {
+      "source": "/search-by-chassis",
+      "destination": "/search-by-chassis.html"
+    },
+    {
+      "source": "/search-by-plate",
+      "destination": "/search-by-plate.html"
+    },
+    {
+      "source": "/sell-salvage-cars",
+      "destination": "/sell-salvage-cars.html"
+    },
+    {
+      "source": "/toyota-salvage-cars",
+      "destination": "/toyota-salvage-cars.html"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/healthcheck",
+      "schedule": "0 6 * * *"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(self), camera=(self)"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'"
+        }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    },
+    {
+      "source": "/config.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    }
+  ]
+}
